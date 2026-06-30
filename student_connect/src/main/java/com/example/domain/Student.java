@@ -34,6 +34,11 @@ public class Student {
 
     @Override
     public String toString() {
+
+        //Funciona como una plantilla. En lugar de concatenar textos con el símbolo + 
+        // (lo cual se vuelve confuso y propenso a errores), usas marcadores de posición (%s) 
+        // que luego se rellenan con las variables que pases en orden.
+
         return String.format("Estudiante: %s\nDir: %s\nTel: %s\nE-mail: %s",
         fullName, address, phone, email);
     }
