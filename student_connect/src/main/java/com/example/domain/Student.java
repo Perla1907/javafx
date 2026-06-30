@@ -34,7 +34,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return String.format("Estudiante: %s | Dir: %s | Tel: %s | E-mail: %s",
+        return String.format("Estudiante: %s\nDir: %s\nTel: %s\nE-mail: %s",
         fullName, address, phone, email);
     }
 

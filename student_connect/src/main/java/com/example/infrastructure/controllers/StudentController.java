@@ -44,7 +44,7 @@ public class StudentController {
     private void actualizarLista() {
 
         StringBuilder sb = new StringBuilder();
-        sb.append("=== ESTUDIANTES REGISTRADOS ===");
+        sb.append("======= ESTUDIANTES REGISTRADOS =======\n\n");
         
         for (Student s : useCase.getAllStudents()) {
             sb.append(s.toString()).append("\n");

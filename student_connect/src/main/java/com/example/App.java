@@ -15,7 +15,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("com.example.student_view.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("student_view.fxml"));
         primaryStage.setTitle("StudentConnect - Registro Universitario");
         primaryStage.setScene(new Scene(root, 650, 450));
         primaryStage.show();
