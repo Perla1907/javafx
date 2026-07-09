@@ -1,9 +1,12 @@
 package com.example;
 import java.io.IOException;
+import java.io.InputStream;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 
@@ -16,8 +19,22 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 500, 300);
+        scene = new Scene(loadFXML("reportes_area1"), 600, 400);
         stage.setScene(scene);
+
+        stage.setTitle("Biblioteca | Control de Acceso");
+
+        InputStream streamImagen = getClass().getResourceAsStream("resources/com/example/images/logo.png");
+        if (streamImagen == null) {
+            streamImagen = getClass().getResourceAsStream("images/logo.png");
+        }
+        
+        if (streamImagen != null) {
+            stage.getIcons().add(new Image(streamImagen));
+        } else {
+            System.out.println("[Advertencia] No se pudo cargar el icono del Stage. Comprueba la ruta.");
+        }
+        stage.setMaximized(true);
         stage.show();
     }
 

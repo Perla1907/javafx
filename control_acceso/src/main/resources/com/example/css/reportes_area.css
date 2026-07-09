@@ -1,0 +1,46 @@
+.menu {
+    -fx-background-color:  #094880;
+    -fx-text-fill: white;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-size: 12px;
+    -fx-padding: 0 0 0 15;
+    -fx-cursor: hand;
+}
+
+.button:hover{
+    -fx-background-color: #3B82F6;
+}
+
+.button:armed {
+    -fx-background-color: #1E40AF;
+}
+
+#btnArea {
+    -fx-background-color: #3B82F6;
+}
+
+#btnGenerar {
+    -fx-background-color:  #094880;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+}
+
+#btnGenerar:hover{
+    -fx-background-color: #3B82F6;
+}
+
+#btnGenerar:armed{
+    -fx-background-color: #1E40AF;
+}
+
+#labelReportes {
+    -fx-padding: 0 0 0 15
+}
+
+#barraMenu { 
+    -fx-alignment: TOP_LEFT;
+}
+    
+    

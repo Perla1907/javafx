@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane stylesheets="@../../control_acceso/src/main/resources/com/example/css/reportes_area.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <VBox fx:id="barraMenu" prefHeight="430.0" prefWidth="172.0" style="-fx-background-color: #094880;" styleClass="menu" BorderPane.alignment="CENTER_LEFT">
+         <children>
+            <Label fx:id="labelReportes1" prefHeight="46.0" prefWidth="162.0" text="Reportes" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnArea1" mnemonicParsing="false" prefHeight="43.0" styleClass="menu" text="Accesos por área" textFill="WHITE" wrapText="true" />
+            <Button fx:id="btnDia1" mnemonicParsing="false" prefHeight="43.0" prefWidth="150.0" styleClass="menu" text="Accesos por día" textFill="WHITE" />
+            <Button fx:id="btnHorarios1" mnemonicParsing="false" prefHeight="43.0" prefWidth="165.0" styleClass="menu" text="Horarios de mayor uso" textFill="WHITE" />
+            <Button fx:id="btnUsuarios1" mnemonicParsing="false" prefHeight="43.0" prefWidth="165.0" styleClass="menu" text="Usuarios más frecuentes" textFill="WHITE" />
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <AnchorPane prefHeight="430.0" prefWidth="482.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="23.0" layoutY="1.0" prefHeight="54.0" prefWidth="394.0" text="Reporte: Accesos por área" textFill="#094880">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="81.0" layoutY="61.0" text="Fecha inicio:" />
+            <Label layoutX="81.0" layoutY="96.0" text="Fecha fin:" />
+            <DatePicker fx:id="fechaInicio1" layoutX="181.0" layoutY="58.0" prefHeight="0.0" prefWidth="146.0" />
+            <DatePicker fx:id="fechaFin1" layoutX="181.0" layoutY="93.0" prefHeight="5.0" prefWidth="146.0" />
+            <Button fx:id="btnGenerar1" layoutX="353.0" layoutY="137.0" mnemonicParsing="false" text="Generar" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <TableView layoutX="38.0" layoutY="209.0" prefHeight="127.0" prefWidth="402.0">
+               <columns>
+                  <TableColumn editable="false" prefWidth="197.60004043579102" text="Área acádemica" />
+                  <TableColumn prefWidth="116.79997253417969" text="Total de accesos" />
+                  <TableColumn prefWidth="87.199951171875" text="Porcentaje" />
+               </columns>
+            </TableView>
+            <Button layoutX="93.0" layoutY="366.0" mnemonicParsing="false" text="Exportar a Excel">
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Button>
+            <Button layoutX="275.0" layoutY="368.0" mnemonicParsing="false" text="Exportar a PDF">
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
