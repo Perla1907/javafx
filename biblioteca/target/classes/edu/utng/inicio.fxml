@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@css/inicio.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utng.controller.Controller">
+   <fx:define>
+      <ToggleGroup fx:id="menuGroup"/>
+   </fx:define>   
+   <children>
+      <BorderPane prefHeight="400.0" prefWidth="600.0" fx:id="mainContainer">
+         <left>
+            <VBox prefHeight="400.0" prefWidth="140.0" style="-fx-background-color: #094880;" BorderPane.alignment="CENTER_LEFT">
+               <children>
+                  <Label fx:id="labelTitulo" prefHeight="46.0" prefWidth="162.0" text="BIBLIOTECA" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <ToggleButton toggleGroup="$menuGroup" fx:id="btnLibro" mnemonicParsing="false" prefHeight="43.0" prefWidth="165.0" styleClass="menu" text="Libros" textFill="WHITE" wrapText="true" onAction="#libro"/>
+                  <ToggleButton toggleGroup="$menuGroup" fx:id="btnUsuario" mnemonicParsing="false" prefHeight="43.0" prefWidth="165.0" styleClass="menu" text="Usuarios" textFill="WHITE" onAction="#usuario"/>
+               </children>
+            </VBox>
+         </left>
+      </BorderPane>
+   </children>
+</AnchorPane>

@@ -1,72 +1,37 @@
-/*
-  ESCALADO DE FUENTES
-  --------------------
-  JavaFX CSS no tiene unidades relativas al viewport (no hay vw/vh como en web),
-  pero sí soporta "em", que es relativo al -fx-font-size del NODO PADRE.
-  Estrategia:
-    1. Aquí solo definimos tamaños en "em" (o dejamos que hereden), nunca en "px" duro,
-       para los textos que deben escalar junto con el resto.
-    2. El tamaño base (-fx-font-size del root) se controla desde el controlador Java,
-       ligándolo al ancho/alto de la escena (ver snippet más abajo). Al cambiarlo ahí,
-       todos los "em" de este archivo se recalculan solos.
-*/
-
-.root {
-    -fx-font-size: 12px; /* tamaño base; el controlador lo sobreescribe en runtime */
-}
-
 .menu {
     -fx-background-color:  #094880;
     -fx-text-fill: white;
     -fx-background-radius: 0;
     -fx-border-radius: 0;
     -fx-alignment: CENTER_LEFT;
-    -fx-font-size: 1em;
-    -fx-padding: 0 0 0 15;
+    -fx-font-size: 24px;
+    -fx-padding: 0 0 0 25;
     -fx-cursor: hand;
 }
 
-.button:hover{
+.table-view {
+    -fx-font-size: 24px;
+}
+
+.menu:hover{
     -fx-background-color: #3B82F6;
 }
 
-.button:armed {
+.menu:pressed  {
     -fx-background-color: #1E40AF;
 }
 
-#btnArea {
+.menu:selected {
     -fx-background-color: #3B82F6;
 }
 
-#btnGenerar {
-    -fx-background-color:  #094880;
-    -fx-text-fill: white;
-    -fx-cursor: hand;
-    -fx-font-size: 1.1em;
-}
-
-#btnGenerar:hover{
-    -fx-background-color: #3B82F6;
-}
-
-#btnGenerar:armed{
-    -fx-background-color: #1E40AF;
-}
-
-#labelReportes {
-    -fx-padding: 0 0 0 15;
-    -fx-font-size: 1.3em;
-}
-
-#barraMenu {
+#barraMenu { 
     -fx-alignment: TOP_LEFT;
 }
 
-.panelReporte {
-    -fx-background-color: white;
+#titulo {
+    -fx-font-size: 26px;
+    -fx-text-fill: white;
 }
-
-.tituloReporte {
-    -fx-font-size: 1.3em;
-    -fx-font-weight: bold;
-}
+    
+    

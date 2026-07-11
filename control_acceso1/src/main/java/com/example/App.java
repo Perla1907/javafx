@@ -19,7 +19,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("reportes_area1"), 600, 400);
+        scene = new Scene(loadFXML("reportes"), 600, 400);
         stage.setScene(scene);
 
         stage.setTitle("Biblioteca | Control de Acceso");

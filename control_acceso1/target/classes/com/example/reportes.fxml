@@ -1,78 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@css/reportes_area.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane  prefHeight="720.0" prefWidth="1280.0" stylesheets="@css/reportes.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Controller">
+   <fx:define>
+      <ToggleGroup fx:id="menuGroup"/>
+   </fx:define>
    <children>
-      <BorderPane prefHeight="400.0" prefWidth="600.0">
-         <left>
-            <VBox prefHeight="400.0" prefWidth="155.0" style="-fx-background-color: #094880;" BorderPane.alignment="CENTER_LEFT">
+      <BorderPane fx:id="mainContainer" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <HBox prefHeight="29.0" prefWidth="1280.0" spacing="20.0" style="-fx-background-color: #094880;" BorderPane.alignment="CENTER">
                <children>
-                  <Label fx:id="labelReportes" prefHeight="46.0" prefWidth="162.0" text="Reportes" textFill="WHITE">
+                  <ImageView fitHeight="42.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Logo1.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="titulo" prefHeight="68.0" prefWidth="518.0" text="Biblioteca | Reportes" />
+               </children>
+               <padding>
+                  <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+               </padding>
+            </HBox>
+         </top>
+         <left>
+            <VBox prefWidth="311.0" style="-fx-background-color: #094880;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="labelReportes" maxWidth="1.7976931348623157E308" prefHeight="80.0" prefWidth="307.0" text="Reportes" textFill="WHITE">
                      <font>
-                        <Font name="System Bold" size="16.0" />
+                        <Font name="System Bold" size="28.0" />
                      </font>
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
                   </Label>
-                  <Button fx:id="btnArea" mnemonicParsing="false" prefHeight="43.0" prefWidth="165.0" styleClass="menu" text="Accesos por área" textFill="WHITE" wrapText="true" />
-                  <Button fx:id="btnDia" mnemonicParsing="false" prefHeight="43.0" prefWidth="165.0" styleClass="menu" text="Accesos por día" textFill="WHITE" />
-                  <Button fx:id="btnHorarios" mnemonicParsing="false" prefHeight="43.0" prefWidth="165.0" styleClass="menu" text="Horarios de mayor uso" textFill="WHITE" />
-                  <Button fx:id="btnUsuarios" mnemonicParsing="false" prefHeight="43.0" prefWidth="165.0" styleClass="menu" text="Usuarios más frecuentes" textFill="WHITE" />
+                  <ToggleButton toggleGroup="$menuGroup" fx:id="btnArea" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="80.0" styleClass="menu" text="Accesos por área" textFill="WHITE" wrapText="true"  onAction="#reportesArea"/>
+                  <ToggleButton toggleGroup="$menuGroup" fx:id="btnDia" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="80.0" styleClass="menu" text="Accesos por día" textFill="WHITE" />
+                  <ToggleButton toggleGroup="$menuGroup" fx:id="btnHorarios" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="80.0" styleClass="menu" text="Horarios de mayor uso" textFill="WHITE" />
+                  <ToggleButton toggleGroup="$menuGroup" fx:id="btnUsuarios" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="80.0" prefWidth="333.0" styleClass="menu" text="Usuarios más frecuentes" textFill="WHITE" />
                </children>
             </VBox>
          </left>
-         <center>
-            <AnchorPane prefHeight="400.0" prefWidth="447.0" BorderPane.alignment="CENTER">
-               <children>
-                  <Label layoutX="23.0" layoutY="1.0" prefHeight="54.0" prefWidth="394.0" text="Reporte: Accesos por área" textFill="#094880">
-                     <font>
-                        <Font name="System Bold" size="16.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="81.0" layoutY="61.0" text="Fecha inicio:" />
-                  <Label layoutX="81.0" layoutY="96.0" text="Fecha fin:" />
-                  <DatePicker fx:id="fechaInicio" layoutX="181.0" layoutY="58.0" prefHeight="0.0" prefWidth="146.0" />
-                  <DatePicker fx:id="fechaFin" layoutX="181.0" layoutY="93.0" prefHeight="5.0" prefWidth="146.0" />
-                  <Button fx:id="btnGenerar" layoutX="353.0" layoutY="137.0" mnemonicParsing="false" text="Generar" textFill="WHITE">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Button>
-                  <TableView layoutX="23.0" layoutY="190.0" prefHeight="127.0" prefWidth="402.0">
-                    <columns>
-                      <TableColumn editable="false" prefWidth="197.60004043579102" text="Área acádemica" />
-                      <TableColumn prefWidth="116.79997253417969" text="Total de accesos" />
-                        <TableColumn prefWidth="87.199951171875" text="Porcentaje" />
-                    </columns>
-                  </TableView>
-                  <Button fx:id="btnExcel" layoutX="75.0" layoutY="344.0" mnemonicParsing="false" text="Exportar a Excel">
-                     <graphic>
-                        <ImageView fitHeight="16.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/excel.png" />
-                           </image></ImageView>
-                     </graphic>
-                  </Button>
-                  <Button fx:id="btnPDF" layoutX="261.0" layoutY="344.0" mnemonicParsing="false" text="Exportar a PDF">
-                     <graphic>
-                        <ImageView fitHeight="16.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/pdf.png" />
-                           </image></ImageView>
-                     </graphic>
-                  </Button>
-               </children>
-            </AnchorPane>
-         </center>
       </BorderPane>
    </children>
 </AnchorPane>

@@ -1,0 +1,32 @@
+.menu {
+    -fx-background-color:  #094880;
+    -fx-text-fill: white;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-size: 12px;
+    -fx-padding: 0 0 0 15;
+    -fx-cursor: hand;
+}
+
+.menu:hover{
+    -fx-background-color: #3B82F6;
+}
+
+.menu:pressed  {
+    -fx-background-color: #1E40AF;
+}
+
+.menu:selected {
+    -fx-background-color: #3B82F6;
+}
+
+#labelTitulo {
+    -fx-padding: 0 0 0 15
+}
+
+#barraMenu { 
+    -fx-alignment: TOP_LEFT;
+}
+    
+    

@@ -1,0 +1,22 @@
+#titulo {
+    -fx-font-size: 26px;
+    -fx-text-fill: white;
+}
+
+#imagenLibro {
+    -fx-alignment: CENTER;
+}
+
+.campo{
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-border-color: #D1D5DB;
+    -fx-border-radius: 12;
+    -fx-padding: 0 15 0 15;
+}
+
+.campo-text{
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+    -fx-font-size: 24px;
+}
